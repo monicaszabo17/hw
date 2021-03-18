@@ -1,0 +1,81 @@
+<div class="col-md-6 offset-md-3 mt-5">
+<div class = "card">
+    <h1>You are welcome to sign up!</h1>
+    <div class="card-body" [hidden]="registered">
+    <form #signup="ngForm" (ngSubmit)="onSubmit(signup)" name="signupForm" novalidate="false">
+        <div class="form-row">
+          <div class="form-group col-sm-6">
+            <input type="text" name="firstName"  class="form-control" ngModel minlength="3" maxlength="20" placeholder="First name" required>
+          </div>
+          <div *ngIf="firstName.touched && firstName.status === 'INVALID'" class="alert alert-danger">
+            <div *ngIf="firstName.errors.required">First Name Required!</div>
+            <div *ngIf="firstName.errors.minlength">Sorry! Short first name</div>
+            <div *ngIf="firstName.errors.maxlength">Sorry! First name is too long</div>
+          </div>
+      
+          <div class="form-group col-sm-6">
+            <input type="text" name="lastName"  class="form-control" ngModel minlength="3" maxlength="20" placeholder="Last name" required>
+          </div>
+
+          <div *ngIf="lastName.touched && lastName.status ==='INVALID'" class="alert alert-danger">
+            <div *ngIf="lastName.errors.required">Last Name Required!</div>
+            <div *ngIf="lastName.errors.minlength">Sorry! Short last name</div>
+            <div *ngIf="lastName.errors.maxlength">Sorry! Last name is too long</div>      
+          </div>
+      
+        </div>
+
+          <div class="form-group">
+           
+            <input type="email" name="email"  class="form-control form-control-sm " ngModel placeholder=" Email" required>
+          </div>
+
+          <div *ngIf="email.touched && email.status === 'INVALID'" class="alert alert-danger">
+            <div *ngIf="email.errors.required">Email Required!</div>
+          
+          </div>
+              
+            
+
+          <div class="form-group">
+            
+            <input type="password" name="password" class="form-control form-control-sm" ngModel minlength="8" maxlength="20" placeholder=" Password" required>
+          </div>
+          <div *ngIf="password.touched && password.status === 'INVALID'" class="alert alert-danger">
+            <div *ngIf="password.errors.required">Password Required!</div>
+            <div *ngIf="password.errors.minlength">Sorry! Short password</div>
+            <div *ngIf="password.errors.maxlength">Sorry! Password is too long</div>      
+          </div>
+      
+
+          <div class="form-group">
+            
+            <input type="password" name="confirm" class="form-control form-control-sm" ngModel minlength="8" maxlength="20" placeholder=" Confirm password" required> 
+          </div>
+          <div *ngIf="confirm.touched && confirm.status === 'INVALID'" class="alert alert-danger">
+            <div *ngIf="confirm.errors.required">Confirm password required!</div>
+            <div *ngIf="confirm.errors.minlength">Sorry! Short password</div>
+            <div *ngIf="confirm.errors.maxlength">Sorry! Password is too long</div>      
+          </div>
+      
+
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input is-invalid" type="checkbox" value = "" id="gridCheck"/>
+              <label class="form-check-label" for="gridCheck">
+                I accept the Terms of Use & Privacy Policy
+              </label>
+              <div class="invalid-feedback">
+                Be agree before submitting.
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign up</button>
+         
+
+          <h3 class="account">Already have an account?<a href="#" routerLink="/signin"
+        routerLinkActive="active">Sign in here.</a></h3>  
+      </form>
+      </div>
+</div>
+</div>

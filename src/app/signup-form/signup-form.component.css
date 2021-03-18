@@ -1,0 +1,17 @@
+.alert{
+    display:block;
+}
+.alert-danger{
+    border: 2px solid red;
+}
+
+h1{
+    margin: auto;
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 2rem;
+}
+.account{
+    color: #007bff;
+    margin-top:2rem;
+}
